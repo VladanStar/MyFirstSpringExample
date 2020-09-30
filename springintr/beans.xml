@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="osoba" class="com.vladancupric.Osoba"
+		init-method="onCreate" destroy-method="onDestroy">
+		<constructor-arg name="ime" type="String"
+			value="Vladan Cupric">
+		</constructor-arg>
+		<constructor-arg name="jmbg" type="int" value="123456789"></constructor-arg>
+		<property name="age" value="47"></property>
+		<property name="adresa" ref="adresa"></property>
+	</bean>
+	<bean id="adresa" class="com.vladancupric.Adresa">
+		<constructor-arg name="street" type="String"
+			value="Kopaonicka 48">
+		</constructor-arg>
+		<constructor-arg name="postCode" type="String" value="34000"></constructor-arg>
+	</bean>
+</beans>
